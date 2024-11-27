@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu hỏi thân mật</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f3f4f6;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #noButton {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chào mừng! Nhập tên của bạn:</h1>
+  <input type="text" id="nameInput" placeholder="Tên của bạn..." />
+  <button id="startButton">Bắt đầu</button>
+
+  <div id="quiz" style="display: none;">
+    <h2 id="question">Câu hỏi: Bạn có thích tôi không?</h2>
+    <button id="yesButton">đúng rồi!!!</button>
+    <button id="noButton">Không phải!!!</button>
+  </div>
+
+  <script>
+    const nameInput = document.getElementById("nameInput");
+    const startButton = document.getElementById("startButton");
+    const quizDiv = document.getElementById("quiz");
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+
+    // Xử lý khi nhấn nút bắt đầu
+    startButton.addEventListener("click", () => {
+      const name = nameInput.value.trim();
+      if (name) {
+        alert(`Chào ${name}! Hãy trả lời câu hỏi dưới đây!`);
+        quizDiv.style.display = "block";
+        startButton.style.display = "none";
+        nameInput.style.display = "none";
+      } else {
+        alert("Vui lòng nhập tên của bạn!");
+      }
+    });
+
+    // Xử lý khi chọn "Đúng rồi!!!"
+    yesButton.addEventListener("click", () => {
+      window.location.href = "https://www.facebook.com/share/19ZoAuFQrH/?mibextid=LQQJ4d";
+    });
+
+    // Xử lý khi chọn "Không phải!!!"
+    noButton.addEventListener("click", () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
