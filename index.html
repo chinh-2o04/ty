@@ -1,77 +1,42 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Câu hỏi thân mật</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f3f4f6;
-    }
-    h1 {
-      color: #333;
-    }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #noButton {
-      position: absolute;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thống kê Xu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Chào mừng! Nhập tên của bạn:</h1>
-  <input type="text" id="nameInput" placeholder="Tên của bạn..." />
-  <button id="startButton">Bắt đầu</button>
-
-  <div id="quiz" style="display: none;">
-    <h2 id="question">Câu hỏi: bạn là 1 dog phải không?</h2>
-    <button id="yesButton">đúng rồi!!!</button>
-    <button id="noButton">Không phải!!!</button>
+  <div class="summary">
+    <div class="summary-box">
+      <div class="label">Tổng xu</div>
+      <div id="totalXu" class="value red">0</div>
+    </div>
+    <div class="arrow">➡</div>
+    <div class="summary-box">
+      <div class="label">Tổng tiền</div>
+      <div id="totalTien" class="value blue">0k</div>
+    </div>
   </div>
 
-  <script>
-    const nameInput = document.getElementById("nameInput");
-    const startButton = document.getElementById("startButton");
-    const quizDiv = document.getElementById("quiz");
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
+  <form id="form">
+    <input type="date" id="date" required />
+    <input type="number" id="xu" placeholder="Nhập số xu" required />
+    <button type="submit">Thêm</button>
+  </form>
 
-    // Xử lý khi nhấn nút bắt đầu
-    startButton.addEventListener("click", () => {
-      const name = nameInput.value.trim();
-      if (name) {
-        alert(`Chào ${name}! Hãy trả lời câu hỏi dưới đây!`);
-        quizDiv.style.display = "block";
-        startButton.style.display = "none";
-        nameInput.style.display = "none";
-      } else {
-        alert("Vui lòng nhập tên của bạn!");
-      }
-    });
+  <table>
+    <thead>
+      <tr>
+        <th>Ngày</th>
+        <th>Xu Gom</th>
+        <th>Tiền</th>
+        <th>Bonus</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
 
-    // Xử lý khi chọn "Đúng rồi!!!"
-    yesButton.addEventListener("click", () => {
-      window.location.href = "https://m.me/hoangvanchinh29";
-    });
-
-    // Xử lý khi chọn "Không phải!!!"
-    noButton.addEventListener("click", () => {
-      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-      noButton.style.left = `${x}px`;
-      noButton.style.top = `${y}px`;
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
