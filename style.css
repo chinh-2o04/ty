@@ -1,109 +1,41 @@
 body {
-  background-color: #000;
-  color: white;
-  font-family: system-ui, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 10px;
-  font-size: 16px;
+  padding: 0;
+  background: #f4f4f4;
 }
 
-.summary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.summary-box {
-  text-align: center;
-  margin: 10px;
-}
-
-.label {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.value {
-  font-size: 24px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  min-width: 80px;
-  text-align: center;
-}
-
-.red {
-  background-color: #fff0f0;
-  color: red;
-}
-
-.blue {
-  background-color: #e6f7ff;
-  color: #00c6ff;
-}
-
-.arrow {
-  font-size: 26px;
-  margin: 0 10px;
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-input[type="date"],
-input[type="number"],
-button {
-  width: 90%;
-  max-width: 300px;
+input, button {
   padding: 10px;
   font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: gold;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  overflow-x: auto;
-  display: block;
 }
 
 th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
   text-align: center;
-  padding: 8px 5px;
-  border-bottom: 1px solid #444;
-  font-size: 15px;
 }
 
-
-th {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-@media (max-width: 500px) {
-  .value {
-    font-size: 20px;
-    padding: 5px 10px;
-  }
-
-  th, td {
-    font-size: 14px;
-  }
+.summary {
+  margin-bottom: 10px;
 }
