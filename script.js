@@ -37,6 +37,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const date = dateInput.value;
   const xu = parseInt(xuInput.value);
+  
 
   if (!date || !xu) return;
 
